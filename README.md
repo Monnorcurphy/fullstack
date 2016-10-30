@@ -41,7 +41,7 @@ sufficient CSS styling:
 **objective:** [Add infinite scroll to Notes Index]
 
 ### Bonus Features (TBD)
-- [ ] ### Bonus: Sort movies by IMDB rating
-- [ ] ### Bonus: Sort movies by actor
+- [ ] Bonus: Sort movies by IMDB rating
+- [ ] Bonus: Sort movies by actor
 - [ ]
 - [ ]
