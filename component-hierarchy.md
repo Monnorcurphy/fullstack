@@ -1,34 +1,58 @@
 # Component Hierarchy
 
+## Component Hierarchy
+
 **AuthFormContainer**
- - AuthForm
+  - AuthForm
 
-**HomeContainer**
- - Home
-  * MovieIndex
+**NavbarContainer**
+  - Navbar
+    * Browse Dropdown
+      * Browse
+      * MyList
+      * Genre
+    * Search
 
-**MoviesContainer**
- - MovieHeader
-  * MoviePlay
+**SeriesContainer**
+  - SeriesIndex
 
-**SearchResultsContainer**
- - Search
+**EpisodeContainer**
+  - WatchEpisode
 
-**MovieIndex**
- - MovieIndexItem
-  + MovieDetail
+**SearchContainer**
+  - SearchResults
+    - SeriesIndex
 
-**Search**
-- SearchResultsContainer
+**UserContainer**
+  - User
+
+**MyList**
+  - MyListItems
+    - SeriesIndex
+
+**Genre**
+  - GenreItems
+    - SeriesIndex
+
+**SeriesIndex**
+  * SeriesIndexItems
+    * Overview
+    * Detail
+      - Review
+    * EpisodesIndex
+      - EpisodesIndexItems
+        + Episode
 
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/movie/:movieId" | "MovieContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/search" | "Search" |
+| Path	| Component |
+|-------|-----------|
+|"/sign-up"	| "AuthFormContainer" |
+|"/sign-in" |	"AuthFormContainer" |
+|"/browse" | "SeriesContainer" |
+|"/browse/my-list" | "MyList" |
+|"/browse/genre/:genreId" | "Genre" |
+|"/search" | "SearchContainer" |
+|"/watch/:episodeId" | "EpisodeContainer" |
+|"/YourAccount" | "UserContainer" |
