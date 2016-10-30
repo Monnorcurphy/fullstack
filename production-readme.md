@@ -1,4 +1,4 @@
-# FresherNote
+# ---Flix
 
 Link to the app
 

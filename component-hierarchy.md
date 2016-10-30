@@ -30,6 +30,5 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/home/movie/:movieId" | "MovieContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
 | "/home/search-results" | "SearchResultsContainer"
 | "/search" | "Search" |
