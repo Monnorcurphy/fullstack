@@ -6,11 +6,12 @@
 column              | data type |	 details
 --------------------|-----------|---------------------------
 id	                |  integer	| not null, primary key
-email   	          |  string	  | not null, indexed, unique
-username	          |  string	  | not null
+username	          |  string	  | not null, indexed, unique
 password_digest     |	 string	  | not null
 session_token	      |  string	  | not null, indexed, unique
-admin               |  boolean  | default: false
+favorite_ids 	      |  array	  | not null
+
+<!-- admin               |  boolean  | default: false -->
 
 ## movies
 column              | data type |	 details
@@ -19,6 +20,9 @@ id	                | integer	  | not null, primary key
 title	              | string	  | not null, indexed
 description         | text      | not null
 year	              | integer	  | not null
+genre	              | string    | not null
+actors              | array     | not null
+imdb_id             | integer   | not null
 image_name          | string    |
 image_type          | string    |
 image_size          | integer   |
@@ -32,27 +36,19 @@ id	            | integer	  | not null, primary key
 name            | string    | not null, indexed
 
 
-## favorites
-column          | data type |	 details
-----------------|-----------|---------------------------
-id	            | integer	  | not null, primary key
-user_id         | integer   | not null, foreign key (references users), indexed
-
-
-## reviews
+## ratings
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer   |	not null, primary key
 user_id         | integer   | not null, indexed
-rating          | integer   | not null, default: 0, indexed
-body            | text      | not null
+rating          | integer   | not null, indexed
 
-## castings (bonus)
+ <!-- ## castings (bonus)
 column          | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer   |	not null, primary key
 series_id       | integer   | not null, indexed, foreign_key(references castings series table)
-cast_id         | integer   | not null, indexed, foreign_key(references castings users table)
+cast_id         | integer   | not null, indexed, foreign_key(references castings users table) -->
 
 ## actors (bonus)
 column          | data type |	 details

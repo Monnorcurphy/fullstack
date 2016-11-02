@@ -24,7 +24,7 @@
     - SeriesIndex
 
 **UserContainer**
-  - User
+  - Profile
 
 **MyList**
   - MyListItems
@@ -55,4 +55,4 @@
 |"/browse/genre/:genreId" | "Genre" |
 |"/search" | "SearchContainer" |
 |"/watch/:episodeId" | "EpisodeContainer" |
-|"/YourAccount" | "UserContainer" |
+|"/profile" | "UserContainer" |

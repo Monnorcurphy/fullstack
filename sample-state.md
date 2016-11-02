@@ -4,6 +4,7 @@
     id: 1,
     username: "guest",
     email: "guest@guest.com",
+    favorite_ids: [1, 3]
 
   },
   forms: {
@@ -14,7 +15,10 @@
     1: {
       title: "Movie Title",
       description: "It has a beginning, middle, and end!",
+      year: 1977,
       avg_rating: 3.5,
+      genre_id: 1,
+      imdb_id: 1
         }
       }
     }
@@ -24,14 +28,15 @@
       name: 'action'
     }
   },
-  favorites :{
-    1: {user_id: 1}
-  },
-  reviews: {
+  ratings: {
     1: {
       user_id: 1,
       rating: 4,
-      body: 'The movie was excellent! Too much middle for me though.'
+    }
+  },
+  castings:{
+    1: {
+      movie_id: 1
     }
   },
   actors: {

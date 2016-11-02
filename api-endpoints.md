@@ -26,10 +26,10 @@
   - Series index/search
   - Accepts query param to list series by title, genre, or "listed"
 - [ ] GET /api/series/:id
-- (Admin user's only:)
+<!-- - (Admin user's only:)
   - PATCH /api/series/:id
   - DELETE /api/series/:id
-  - POST /api/series
+  - POST /api/series -->
 
 ### Episodes
 
@@ -37,10 +37,10 @@
   - Episodes index
 - GET /api/episodes/:id
   - Watch episode
-- (Admin user's only:)
+<!-- - (Admin user's only:)
   - PATCH /api/episodes/:id
   - DELETE /api/episodes/:id
-  - POST /api/series/:series_id/episodes
+  - POST /api/series/:series_id/episodes -->
 
 ### Reviews
 

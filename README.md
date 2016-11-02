@@ -10,19 +10,15 @@ sufficient CSS styling:
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
+- [ ] Production README
+
 - [ ] 'Movies' (Commercials)
   -Access various movies (pick/play)
-- [] Ratings
+- [ ] Ratings
   - See average rating for a movie
   - Rate a movie
-- [ ] MyList
-  - Create a 'My List' to keep track of series-to-watch
-- [ ] Wrap-around Scroll
-  - Series are organized by genre with a 'wrap-around' scroll
 - [ ] Search
 
-- [ ]
-- [ ] Production README
 
 ## Implementation Timeline
 
@@ -40,7 +36,7 @@ sufficient CSS styling:
 - [ ] User signup/signin components
 - [ ] Blank landing component after signup/signin
 - [ ] Style signup/signin components
-- [ ] Seed users
+- [ ] Guest Login
 - [ ] Review phase 1
 
 ### Phase 2: Series Model, API, and components (2 days)
@@ -131,8 +127,14 @@ sufficient CSS styling:
 - [ ] Paginate Series Index API to send 4 results at a time
 - [ ] Append next set of results when user scrolls and is near bottom
 - [ ] Style scroll components and transitions
-- [ ] Ensure seed data demonstrates infinite scroll### Bonus Features (TBD)
+- [ ] Ensure seed data demonstrates infinite scroll### Bonus
+
+### Bonus
 - [ ] Bonus: Sort movies by IMDB rating
 - [ ] Bonus: Sort movies by actor
-- [ ]
-- [ ]
+- [ ] Bonus: Search for actor's movies
+- [ ] Bonus: MyList
+  - Create a 'My List' to keep track of series-to-watch
+  - Wrap-around Scroll
+  - Series are organized by genre with a 'wrap-around' scroll
+- [ ] Bonus: Scribble log in
