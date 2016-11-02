@@ -26,17 +26,17 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] New Rails project
-- [ ] User model/migration
-- [ ] Back end authentication (session/password)
-- [ ] StaticPages controller and root view
-- [ ] Webpack & react/redux modules
-- [ ] APIUtil to interact with the API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/signin components
-- [ ] Blank landing component after signup/signin
+- [X] New Rails project
+- [X] User model/migration
+- [X] Back end authentication (session/password)
+- [X] StaticPages controller and root view
+- [X] Webpack & react/redux modules
+- [X] APIUtil to interact with the API
+- [X] Redux cycle for frontend authentication
+- [X] User signup/signin components
+- [X] Blank landing component after signup/signin
 - [ ] Style signup/signin components
-- [ ] Guest Login
+- [X] Guest Login
 - [ ] Review phase 1
 
 ### Phase 2: Series Model, API, and components (2 days)
