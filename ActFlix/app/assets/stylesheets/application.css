@@ -26,6 +26,16 @@ a.header-link{
   text-decoration: none;
   color: red;
 }
+h2.header-name{
+  display: flex;
+  float: right;
+}
+img.splash-image{
+  width: 600px;
+  height: 600px;
+  z-index: -100;
+}
+
 /*nav.login-signup >a:first-child{
   color: red;
 }
