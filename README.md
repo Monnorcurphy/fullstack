@@ -1,140 +1,53 @@
-# ---flix *name to be changed*
+# Fakeflix
+
+[Fakeflix Site][heroku]
+
+[heroku]: http://fakeflix.herokuapp.com/
+
+Fakeflix is a full-stack web application that allows users to watch trailers from over 225 of IMDB's top 250 movies movies. The back end of the application was built with Ruby on Rails and a PostgreSQL database. All data fetching was done using AJAX and JBuilder for declaring JSON structures. The front end was created with React.js and JavaScript and utilizes the Redux architectural framework for an optimal single-page user-experience.
+
+## Features & Implementation
+
+### Authentication/Splash page
+
+Back-end and front-end user authentication was built from scratch by encrypting user password and creating a unique session token for each user on sign up or login. This allows for secure access to one's account on the single-page application which then renders distinct content based on the current user.
+
+I allowed the user to demo login in three locations, and I have a big high quality gif from one of the trailers in my database so users have an idea of what my site does.
+
+<img src="http://res.cloudinary.com/dqiuefax1/image/upload/v1478892903/pic1_eei2xe.png" />
+
+###Main Index
+
+The main page displays one random movie from IMDB's top 50 movies. I also have movies organized into several different categories including Action, Comedy, and Sci-fi/Fantasy, in a carousel. Each trailer has an a poster which, when clicked, will navigate to a page where the trailer can be played along with information about the movie is displayed.
+
+<img src="http://res.cloudinary.com/dqiuefax1/image/upload/v1478892854/pic2_deqwlj.png" />
+<img src="http://res.cloudinary.com/dqiuefax1/image/upload/v1478892879/pic3_iudwfk.png" />
 
 
-##Minimum Viable Product
----flix *name to be changed* is a web application inspired by Netflix built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation, adequate seed data and sufficient CSS styling
-- [ ] Production README
+###Trailers
 
-- [ ] 'Movies' (Commercials)
-  -Access various movies (pick/play)
-- [ ] Ratings
-  - See average rating for a movie
-  - Rate a movie
-- [ ] Search
+Trailers are fully searchable my a movie title. Instead of manually seeding all of my movies, I created a custom rake task which iterates through a list and creates the movie with data I retrieve from OMDB's API. This data allows me to have a Title, description, genre, and even a movie poster to accompany the trailer. In order to get the trailers to be streamable, I had to give each movie a url through youtube's api. I also did this in my custom rake task. This means, that a movie has all of the information a user would need when it is seeded into the database.
+
+<img src="http://res.cloudinary.com/dqiuefax1/image/upload/v1478892890/pic4_qcb6ww.png" />
 
 
-## Implementation Timeline
+The video player was created using the react component react-youtube and other functions from the YouTube IFrame Player API. The tricky part was displaying a video in an appealing manner while also being able to display.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+<img src="http://res.cloudinary.com/dqiuefax1/image/upload/v1478892871/pic5_vnsveh.png" />
 
-**Objective:** Functioning rails project with front-end Authentication
 
-- [X] New Rails project
-- [X] User model/migration
-- [X] Back end authentication (session/password)
-- [X] StaticPages controller and root view
-- [X] Webpack & react/redux modules
-- [X] APIUtil to interact with the API
-- [X] Redux cycle for frontend authentication
-- [X] User signup/signin components
-- [X] Blank landing component after signup/signin
-- [ ] Style signup/signin components
-- [X] Guest Login
-- [ ] Review phase 1
 
-### Phase 2: Series Model, API, and components (2 days)
+###Ratings
 
-**Objective:** Series can be created, read, edited and destroyed through the API.
+Users can rate reviews from the series' overview panel on the display page or while writing a review. In order to implement this, all of the validations for creating a review had to be done on the front end. When rating a series from the overview panel, no body is required. However, if a user were on the details panel and tried to create a review, the review will not be submitted unless a body is attached to the rating.
 
-- [ ] Series model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for series (SeriesController)
-- [ ] JBuilder views for series
-- Series components and respective Redux loops
-  - [ ] SeriesIndex
-    - Will be primary portion of app
-      * Included in 'browse', 'mylist' and 'search'
-  - [ ] SeriesIndexRow
-    - Each row in the index that implements 'wrap-around' scrolling
-  - [ ] SeriesIndexItem
-    - Ratings
-    - Play current episode
-  - [ ] SeriesDetailPane
-      - SeriesDetail
-      - SeriesOverview
-      - SeriesEpisodes
-  - [ ] Seed series
 
-### Phase 3: Episode Model, API, and components (3 days)
+###Additional Work
 
-**Objective:** Episodes can be created, read, edited and destroyed through the API.
+There are still a couple of features that have yet to be implemented into this application and are listed below:
 
-- [ ] Episode model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for episodes (EpisodesController)
-- [ ] JBuilder views for episodes
-- Episodes components and respective Redux loops
-  - [ ] EpisodeIndex
-    - Nested in SeriesIndexItem::SeriesEpisodes
-    - Implement 'wrap-around' scrolling
-  - [ ] EpisodeIndexItem
-  - [ ] EpisodeShow
-    - Be able to watch an episode through YouTube API
-  - [ ] Seed episodes within series
 
-### Phase 4: Reviews (2 day)
-
-**Objective:** Reviews belong to series that can be created, read, edited and destroyed through the API.
-
-- [ ] Review model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for reviews (ReviewsController)
-- [ ] JBuilder views for reviews
-- [ ] Adding reviews requires a series
-- Reviews components and respective Redux loops
-  - [ ] ReviewsIndex
-    - Preview shown in SeriesIndexItem::SeriesDetail
-
-      - All reviews shown through Modal
-
-  - [ ] ReviewForm
-    - User can write own review in SeriesIndexItem::SeriesDetail
-- [ ] Seed reviews
-
-### Phase 5: Searching (1 day)
-
-**Objective:** Be able to search for series by genre or title
-
-- Search results will use presentation components of primary app (series & episodes) but will filter which series are sent
-
-- [ ] Search model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for Search (SearchController)
-- [ ] JBuilder views for Search
-
-### Phase 6: My List (1 day)
-
-**Objective:** Be able to create a list of series-to-watch that can be updated (added to & removed from)
-
-- MyList will use presentation components of primary app (series & episodes) but will filter which series are sent
-
-- [ ] MyList model
-- [ ] CRUD API for MyList (MyListsController)
-- [ ] JBuilder views for MyList
-- [ ] Seed database with a small amount of test data
-
-### Phase 7: Pagination / infinite scroll for Series Index (1 day)
-
-**Objective:** Add infinite scroll to Series Index
-
-- [ ] Paginate Series Index API to send 4 results at a time
-- [ ] Append next set of results when user scrolls and is near bottom
-- [ ] Style scroll components and transitions
-- [ ] Ensure seed data demonstrates infinite scroll### Bonus
-
-### Bonus
-- [ ] Bonus: Sort movies by IMDB rating
-- [ ] Bonus: Sort movies by actor
-- [ ] Bonus: Search for actor's movies
-- [ ] Bonus: MyList
-  - Create a 'My List' to keep track of series-to-watch
-  - Wrap-around Scroll
-  - Series are organized by genre with a 'wrap-around' scroll
-- [ ] Bonus: Scribble log in
+An ability to Sort trailers by IMDB rating and by Actors
+An ability to for all movies an actor has been in.
+A user profile page
